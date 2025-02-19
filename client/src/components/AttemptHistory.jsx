@@ -3,7 +3,7 @@ import { getAttempts } from "../db";
 
 const AttemptHistory = () => {
   const [attempts, setAttempts] = useState([]);
-
+  //fecth attempts
   useEffect(() => {
     const fetchAttempts = async () => {
       const data = await getAttempts();
@@ -11,7 +11,7 @@ const AttemptHistory = () => {
     };
     fetchAttempts();
   }, []);
-
+  //displaying attempts only time score,total points
   return (
     <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-auto mt-8">
       <h2 className="text-2xl font-bold mb-4 text-center">

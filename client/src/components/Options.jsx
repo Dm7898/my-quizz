@@ -3,9 +3,11 @@ const Options = ({ question, dispatch, answer }) => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+      {/* options */}
       {question.options.map((option, index) => (
         <button
           key={index}
+          // if answer is correct green color will be shown wrong means red default blue
           className={`px-4 py-2 rounded-lg text-lg font-medium transition-all duration-300 cursor-pointer
             ${option === answer ? "border-2 border-white" : ""}
             ${

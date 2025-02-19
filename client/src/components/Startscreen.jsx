@@ -1,3 +1,4 @@
+//initial screen
 const Startscreen = ({ noOfQuestions, dispatch }) => {
   return (
     <div className="bg-gray-900 text-white text-center p-8 rounded-lg shadow-lg w-full max-w-lg ">

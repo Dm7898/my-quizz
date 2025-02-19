@@ -5,12 +5,12 @@ import Timer from "./Timer";
 
 function Question({ question, dispatch, answer, index, noOfQuestions }) {
   const [userAnswer, setUserAnswer] = useState("");
-
+  //without re rendering used useMemo
   const memoizedOptions = useMemo(
     () => <Options question={question} dispatch={dispatch} answer={answer} />,
     [dispatch, question, answer]
   );
-
+  //it will get and store the user integer type value
   const handleInputChange = (e) => {
     setUserAnswer(e.target.value);
   };
@@ -18,7 +18,14 @@ function Question({ question, dispatch, answer, index, noOfQuestions }) {
   return (
     <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg w-full max-w-xl mx-auto text-center">
       {/* Timer */}
-      <Timer dispatch={dispatch} index={index} noOfQuestions={noOfQuestions} />
+      <Timer
+        dispatch={dispatch}
+        index={index}
+        noOfQuestions={noOfQuestions}
+        question={question}
+        userAnswer={userAnswer}
+        setUserAnswer={setUserAnswer}
+      />
 
       {/* Question */}
       <h3 className="text-2xl font-semibold text-indigo-400 mb-4">

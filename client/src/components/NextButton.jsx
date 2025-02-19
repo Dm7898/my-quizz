@@ -8,7 +8,7 @@ const NextButton = ({
   setUserAnswer,
 }) => {
   const isLast = index === noOfQuestions - 1;
-
+  //checks the intger type answer
   function handleClick() {
     const isCorrect = Number(userAnswer) === question.answer;
     dispatch({
@@ -22,7 +22,7 @@ const NextButton = ({
       dispatch({ type: "nextQuestion" });
     }
   }
-
+  //ingeter type question button
   if (answer === null && !question.options) {
     return (
       <button
@@ -34,7 +34,7 @@ const NextButton = ({
       </button>
     );
   }
-
+  //multiple choice button it will only show after selecting a option
   if (answer === null) return null;
 
   return (
