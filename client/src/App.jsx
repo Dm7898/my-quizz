@@ -94,7 +94,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/questions`);
+        const response = await fetch("/questions.json");
         if (!response.ok) throw new Error("Failed to fetch questions");
         const data = await response.json();
         console.log(data);
